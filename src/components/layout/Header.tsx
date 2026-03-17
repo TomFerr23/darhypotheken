@@ -23,8 +23,8 @@ export default function Header() {
             />
           </a>
 
-          {/* Desktop Nav */}
-          <nav className="hidden items-center gap-8 nav:flex">
+          {/* Desktop Nav — centered */}
+          <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 nav:flex">
             {NAV_ITEMS.map((item) => (
               <a
                 key={item.href}
@@ -35,6 +35,14 @@ export default function Header() {
               </a>
             ))}
           </nav>
+
+          {/* Anmelding button — desktop */}
+          <a
+            href="#contact"
+            className="hidden shrink-0 rounded-full bg-dar-green px-5 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90 nav:inline-flex"
+          >
+            Anmelding
+          </a>
 
           {/* Hamburger */}
           <button

@@ -13,7 +13,7 @@ export default function PillarsSection() {
   return (
     <>
       {/* Purpose section — keeps navy background */}
-      <section className="bg-dar-navy py-20 md:py-28">
+      <section id="purpose" className="bg-dar-navy py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <motion.div
             className="mx-auto max-w-3xl text-center"
