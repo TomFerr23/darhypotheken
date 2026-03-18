@@ -77,8 +77,7 @@ export default function HeroSection() {
             width={585}
             height={313}
             className="h-auto w-full"
-            priority
-            fetchPriority="high"
+            loading="lazy"
             sizes="(max-width: 768px) 38vw, 500px"
             aria-hidden
           />
@@ -95,8 +94,7 @@ export default function HeroSection() {
             width={633}
             height={314}
             className="h-auto w-full"
-            priority
-            fetchPriority="high"
+            loading="lazy"
             sizes="(max-width: 768px) 42vw, 540px"
             aria-hidden
           />

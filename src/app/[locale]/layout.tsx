@@ -80,8 +80,6 @@ export default async function LocaleLayout({
     <html lang={locale} className={gilroy.variable}>
       <head>
         <link rel="preconnect" href="https://cdn.sanity.io" />
-        <link rel="preload" href="/images/Artwork-1-blue.svg" as="image" />
-        <link rel="preload" href="/images/Artwork-2-blue.svg" as="image" />
       </head>
       <body className="antialiased">
         <NextIntlClientProvider>
