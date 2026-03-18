@@ -145,6 +145,25 @@
     "s13heading": "Toekomstige wijzigingen",
     "s13text": "Wij behouden ons het recht voor om deze privacyverklaring in de toekomst aan te passen. Op onze website www.darhypotheken.nl publiceren wij altijd de meest recente versie. Wij raden u aan deze verklaring regelmatig te raadplegen."
   },
+  "chat": {
+    "title": "DAR Assistent",
+    "welcome": "Welkom! Vul uw gegevens in om te beginnen.",
+    "namePlaceholder": "Uw naam",
+    "emailPlaceholder": "E-mailadres",
+    "phonePlaceholder": "Telefoonnummer",
+    "startChat": "Start gesprek",
+    "inputPlaceholder": "Typ uw bericht...",
+    "send": "Verstuur",
+    "greeting": "Hallo! Hoe kan ik u helpen met informatie over DAR Hypotheken?",
+    "comingSoon": "Onze chat-assistent is binnenkort beschikbaar. Wij hebben uw gegevens ontvangen en nemen contact met u op. U kunt ook mailen naar info@darhypotheken.nl.",
+    "errorGeneric": "Er is een fout opgetreden. Probeer het opnieuw.",
+    "rateLimited": "U stuurt te veel berichten. Wacht even en probeer het opnieuw.",
+    "nameRequired": "Naam is verplicht",
+    "emailRequired": "E-mailadres is verplicht",
+    "emailInvalid": "Ongeldig e-mailadres",
+    "phoneRequired": "Telefoonnummer is verplicht",
+    "poweredBy": "Powered by DAR Hypotheken"
+  },
   "footer": {
     "tagline": "Duurzaam. Alternatief. Rentevrij.",
     "navigation": "Navigatie",

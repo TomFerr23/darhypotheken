@@ -145,6 +145,25 @@
     "s13heading": "Future changes",
     "s13text": "We reserve the right to amend this privacy statement in the future. We always publish the most recent version on our website www.darhypotheken.nl. We recommend that you consult this statement regularly."
   },
+  "chat": {
+    "title": "DAR Assistant",
+    "welcome": "Welcome! Please fill in your details to get started.",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "Email address",
+    "phonePlaceholder": "Phone number",
+    "startChat": "Start chat",
+    "inputPlaceholder": "Type your message...",
+    "send": "Send",
+    "greeting": "Hello! How can I help you with information about DAR Hypotheken?",
+    "comingSoon": "Our chat assistant will be available soon. We have received your details and will contact you. You can also email info@darhypotheken.nl.",
+    "errorGeneric": "An error occurred. Please try again.",
+    "rateLimited": "You are sending too many messages. Please wait and try again.",
+    "nameRequired": "Name is required",
+    "emailRequired": "Email address is required",
+    "emailInvalid": "Invalid email address",
+    "phoneRequired": "Phone number is required",
+    "poweredBy": "Powered by DAR Hypotheken"
+  },
   "footer": {
     "tagline": "Sustainable. Alternative. Interest-Free.",
     "navigation": "Navigation",

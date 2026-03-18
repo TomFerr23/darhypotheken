@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { gilroy } from "@/lib/fonts";
+import ChatWidget from "@/components/chat/ChatWidget";
 import "../globals.css";
 
 export const viewport: Viewport = {
@@ -80,7 +81,10 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://cdn.sanity.io" />
       </head>
       <body className="antialiased">
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          {children}
+          <ChatWidget />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
