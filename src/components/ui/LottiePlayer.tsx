@@ -1,16 +1,11 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import { Suspense, lazy } from "react";
 
-const DotLottieReact = dynamic(
-  () =>
-    import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="h-[450px] w-[450px] animate-pulse rounded-lg bg-gray-100" />
-    ),
-  }
+const DotLottieReact = lazy(() =>
+  import("@lottiefiles/dotlottie-react").then((mod) => ({
+    default: mod.DotLottieReact,
+  }))
 );
 
 interface LottiePlayerProps {
@@ -20,11 +15,14 @@ interface LottiePlayerProps {
 
 export default function LottiePlayer({ src, className }: LottiePlayerProps) {
   return (
-    <DotLottieReact
-      src={src}
-      autoplay
-      loop
-      className={className}
-    />
+    <Suspense
+      fallback={
+        <div
+          className={`animate-pulse rounded-lg bg-gray-100 ${className ?? "h-[450px] w-[450px]"}`}
+        />
+      }
+    >
+      <DotLottieReact src={src} autoplay loop className={className} />
+    </Suspense>
   );
 }

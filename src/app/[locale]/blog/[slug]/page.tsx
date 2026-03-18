@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { getPostBySlug, getAllSlugs } from "@/sanity/queries";
 import { urlFor } from "@/sanity/image";
+import BlogJsonLd from "@/components/seo/BlogJsonLd";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import PortableTextRenderer from "@/components/blog/PortableTextRenderer";
@@ -59,8 +60,29 @@ export default async function BlogPostPage({
     locale === "en" && post.bodyEn ? post.bodyEn : post.body;
   const backHref = locale === "nl" ? "/blog" : "/en/blog";
 
+  const baseUrl = "https://darhypotheken.nl";
+  const postUrl =
+    locale === "nl"
+      ? `${baseUrl}/blog/${slug}`
+      : `${baseUrl}/en/blog/${slug}`;
+  const postImage = post.mainImage
+    ? urlFor(post.mainImage).width(1200).height(630).url()
+    : undefined;
+
   return (
     <>
+      <BlogJsonLd
+        title={title}
+        description={
+          locale === "en" && post.seoDescriptionEn
+            ? post.seoDescriptionEn
+            : post.seoDescription || post.excerpt || ""
+        }
+        image={postImage}
+        datePublished={post.publishedAt || ""}
+        author={post.author || "DAR Hypotheken"}
+        url={postUrl}
+      />
       <Header />
       <main className="bg-white py-20 md:py-28">
         <article className="mx-auto max-w-3xl px-6">

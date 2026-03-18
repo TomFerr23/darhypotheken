@@ -14,13 +14,13 @@ export default function HeroSection() {
         className="pointer-events-none absolute top-[12%] z-0 w-[60px] opacity-90 md:w-[100px]"
         style={{ animation: "cloud-move-right 22s linear infinite" }}
       >
-        <Image src="/images/cloud.svg" alt="" width={353} height={233} className="h-auto w-full" aria-hidden />
+        <Image src="/images/cloud.svg" alt="" width={353} height={233} className="h-auto w-full" loading="lazy" sizes="(max-width: 768px) 60px, 100px" aria-hidden />
       </div>
       <div
         className="pointer-events-none absolute top-[22%] z-0 w-[80px] opacity-50 md:w-[120px]"
         style={{ animation: "cloud-move-left 30s linear infinite" }}
       >
-        <Image src="/images/cloud.svg" alt="" width={353} height={233} className="h-auto w-full" aria-hidden />
+        <Image src="/images/cloud.svg" alt="" width={353} height={233} className="h-auto w-full" loading="lazy" sizes="(max-width: 768px) 80px, 120px" aria-hidden />
       </div>
 
       <motion.div
@@ -60,7 +60,7 @@ export default function HeroSection() {
           animate={{ x: 0 }}
           transition={{ duration: 1, ease: easeOutBack, delay: 0.3 }}
         >
-          <Image src="/images/Artwork-1-blue.svg" alt="" width={585} height={313} className="h-auto w-full" aria-hidden />
+          <Image src="/images/Artwork-1-blue.svg" alt="" width={585} height={313} className="h-auto w-full" loading="lazy" sizes="(max-width: 768px) 38vw, 500px" aria-hidden />
         </motion.div>
         <motion.div
           className="w-[42%] max-w-[540px]"
@@ -68,7 +68,7 @@ export default function HeroSection() {
           animate={{ x: 0 }}
           transition={{ duration: 1, ease: easeOutBack, delay: 0.3 }}
         >
-          <Image src="/images/Artwork-2-blue.svg" alt="" width={633} height={314} className="h-auto w-full" aria-hidden />
+          <Image src="/images/Artwork-2-blue.svg" alt="" width={633} height={314} className="h-auto w-full" loading="lazy" sizes="(max-width: 768px) 42vw, 540px" aria-hidden />
         </motion.div>
       </div>
     </section>

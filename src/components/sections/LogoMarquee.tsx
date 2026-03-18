@@ -17,6 +17,7 @@ export default function LogoMarquee() {
               width={100}
               height={46}
               className="opacity-100"
+              loading="lazy"
             />
           </div>
         ))}

@@ -14,13 +14,13 @@ export default function ClosingSection() {
         className="pointer-events-none absolute top-[8%] z-0 w-[80px] opacity-60 md:w-[120px]"
         style={{ animation: "cloud-move-right 22s linear infinite" }}
       >
-        <Image src="/images/cloud-blue-last.svg" alt="" width={430} height={210} className="h-auto w-full" aria-hidden />
+        <Image src="/images/cloud-blue-last.svg" alt="" width={430} height={210} className="h-auto w-full" loading="lazy" sizes="(max-width: 768px) 80px, 120px" aria-hidden />
       </div>
       <div
         className="pointer-events-none absolute top-[18%] z-0 w-[100px] opacity-40 md:w-[160px]"
         style={{ animation: "cloud-move-left 32s linear infinite" }}
       >
-        <Image src="/images/two-clouds.svg" alt="" width={586} height={321} className="h-auto w-full" aria-hidden />
+        <Image src="/images/two-clouds.svg" alt="" width={586} height={321} className="h-auto w-full" loading="lazy" sizes="(max-width: 768px) 100px, 160px" aria-hidden />
       </div>
 
       <motion.div
@@ -43,7 +43,7 @@ export default function ClosingSection() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <Image src="/images/Artwork.svg" alt="" width={585} height={313} className="h-auto w-full" aria-hidden />
+          <Image src="/images/Artwork.svg" alt="" width={585} height={313} className="h-auto w-full" loading="lazy" sizes="(max-width: 768px) 45vw, 585px" aria-hidden />
         </motion.div>
         <motion.div
           className="-ml-[5%] w-[55%] max-w-[633px]"
@@ -52,7 +52,7 @@ export default function ClosingSection() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
         >
-          <Image src="/images/Artwork-2.svg" alt="" width={633} height={314} className="h-auto w-full" aria-hidden />
+          <Image src="/images/Artwork-2.svg" alt="" width={633} height={314} className="h-auto w-full" loading="lazy" sizes="(max-width: 768px) 55vw, 633px" aria-hidden />
         </motion.div>
       </div>
     </section>

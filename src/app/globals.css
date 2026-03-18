@@ -91,3 +91,18 @@ body {
     left: 20px;
   }
 }
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none !important;
+  }
+  .timeline-line-fill {
+    transition: none !important;
+  }
+}
+
+/* Add will-change to cloud animations for GPU acceleration */
+[style*="cloud-move"] {
+  will-change: transform;
+}
