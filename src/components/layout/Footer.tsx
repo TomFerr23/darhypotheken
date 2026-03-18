@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer className="bg-dar-navy">
       <div className="mx-auto max-w-7xl px-6 py-12 md:py-16">
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-4">
           <div>
             <Image
               src="/images/dar-logo.svg"
@@ -21,10 +21,15 @@ export default function Footer() {
               height={32}
             />
             <p className="mt-4 text-sm text-dar-cream/70">{t("tagline")}</p>
-            <p className="mt-2 text-sm leading-snug text-dar-cream/50">
+            <a
+              href="https://maps.google.com/?q=Oostenburgermiddenstraat+119,+1018+LH+Amsterdam"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 block text-sm leading-snug text-dar-cream/50 underline hover:text-dar-cream/70"
+            >
               Oostenburgermiddenstraat 119<br />
               1018 LH, Amsterdam (NL)
-            </p>
+            </a>
           </div>
 
           <div>
@@ -52,6 +57,14 @@ export default function Footer() {
                   {t("contact")}
                 </a>
               </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="mb-3 font-semibold text-dar-cream">
+              {t("legal")}
+            </h4>
+            <ul className="space-y-2 text-sm text-dar-cream/70">
               <li>
                 <a href={privacyHref} className="hover:text-dar-cream">
                   {t("privacy")}
