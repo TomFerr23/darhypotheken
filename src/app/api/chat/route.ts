@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { checkRateLimit } from "@/lib/chat/rate-limit";
+import { matchFaq } from "@/lib/chat/faq";
 import { get as cacheGet, set as cacheSet } from "@/lib/chat/cache";
 import { buildSystemPrompt } from "@/lib/chat/system-prompt";
 import { retrieveRelevantChunks, buildContext } from "@/lib/chat/knowledge";
@@ -77,8 +78,20 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check cache for single-turn (first message only)
+    // Check FAQ for single-turn (first message only) — instant answers without API
     const isFirstMessage = messages.length === 1;
+    if (isFirstMessage) {
+      const faqAnswer = matchFaq(messages[0].content, safeLocale);
+      if (faqAnswer) {
+        return NextResponse.json({
+          message: faqAnswer,
+          available: true,
+          source: "faq",
+        });
+      }
+    }
+
+    // Check cache for single-turn (first message only)
     if (isFirstMessage) {
       const cached = cacheGet(messages[0].content);
       if (cached) {
