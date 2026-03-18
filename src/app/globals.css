@@ -94,6 +94,9 @@ body {
 
 /* Respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   .animate-marquee {
     animation: none !important;
   }
