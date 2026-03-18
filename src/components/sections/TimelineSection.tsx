@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useTranslations } from "next-intl";
 import { fadeSlideUp, defaultViewport } from "@/lib/animations";
@@ -52,6 +53,32 @@ export default function TimelineSection() {
             ))}
           </div>
         </div>
+
+        {/* Sharia Compliance Certification */}
+        <motion.div
+          className="mt-20 flex items-center gap-8"
+          variants={fadeSlideUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={defaultViewport}
+        >
+          <span className="text-[16px] leading-tight text-dar-gray">
+            Sharia Compliance<br />Certification provided by:
+          </span>
+          <a
+            href="https://noorshariah.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/images/noor-shariah-logo.png"
+              alt="Noor Shariah Solutions"
+              width={160}
+              height={60}
+              className="h-auto w-[140px]"
+            />
+          </a>
+        </motion.div>
       </div>
     </section>
   );

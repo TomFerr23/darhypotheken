@@ -21,6 +21,9 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
+    icons: {
+      icon: "/images/dar-logo-dec.svg",
+    },
     alternates: {
       canonical: locale === "nl" ? baseUrl : `${baseUrl}/en`,
       languages: {
