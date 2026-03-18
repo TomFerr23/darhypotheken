@@ -30,7 +30,8 @@ export async function generateMetadata({
     title: t("title"),
     description: t("description"),
     icons: {
-      icon: "/images/dar-logo-dec.svg",
+      icon: "/images/favicon.svg",
+      apple: "/images/favicon.svg",
     },
     alternates: {
       canonical: locale === "nl" ? baseUrl : `${baseUrl}/en`,
