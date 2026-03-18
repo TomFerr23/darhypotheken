@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { getPostBySlug, getAllSlugs } from "@/sanity/queries";
 import { urlFor } from "@/sanity/image";
 import BlogJsonLd from "@/components/seo/BlogJsonLd";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import PortableTextRenderer from "@/components/blog/PortableTextRenderer";
@@ -69,8 +70,17 @@ export default async function BlogPostPage({
     ? urlFor(post.mainImage).width(1200).height(630).url()
     : undefined;
 
+  const prefix = locale === "nl" ? "" : "/en";
+
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: `${baseUrl}${prefix || "/"}` },
+          { name: "Blog", url: `${baseUrl}${prefix}/blog` },
+          { name: title, url: postUrl },
+        ]}
+      />
       <BlogJsonLd
         title={title}
         description={

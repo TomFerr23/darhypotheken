@@ -1,4 +1,5 @@
 import JsonLd from "@/components/seo/JsonLd";
+import FaqJsonLd from "@/components/seo/FaqJsonLd";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
@@ -23,6 +24,7 @@ export default async function Home({
   return (
     <>
       <JsonLd />
+      <FaqJsonLd locale={locale} />
       <Header />
       <main>
         <HeroSection />

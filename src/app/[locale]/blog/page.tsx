@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { getAllPosts } from "@/sanity/queries";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import BlogCard from "@/components/blog/BlogCard";
@@ -26,8 +27,17 @@ export default async function BlogPage({
   const t = await getTranslations({ locale, namespace: "blog" });
   const posts = await getAllPosts();
 
+  const baseUrl = "https://darhypotheken.nl";
+  const prefix = locale === "nl" ? "" : "/en";
+
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: `${baseUrl}${prefix || "/"}` },
+          { name: "Blog", url: `${baseUrl}${prefix}/blog` },
+        ]}
+      />
       <Header />
       <main className="bg-white py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
