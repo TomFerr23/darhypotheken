@@ -77,6 +77,12 @@
     "description2": "over de mogelijkheden van een DAR hypotheek.",
     "cta": "Aanmelding"
   },
+  "blog": {
+    "title": "Blog",
+    "description": "Lees de laatste inzichten over hypotheken, duurzaamheid en de woningmarkt.",
+    "noPosts": "Nog geen artikelen gepubliceerd.",
+    "backToList": "Terug naar blog"
+  },
   "privacy": {
     "title": "Privacy Statement",
     "s1heading": "Waarom verwerken wij persoonsgegevens?",

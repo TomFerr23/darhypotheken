@@ -77,6 +77,12 @@
     "description2": "about the possibilities of a DAR mortgage.",
     "cta": "Registration"
   },
+  "blog": {
+    "title": "Blog",
+    "description": "Read the latest insights on mortgages, sustainability and the housing market.",
+    "noPosts": "No articles published yet.",
+    "backToList": "Back to blog"
+  },
   "privacy": {
     "title": "Privacy Statement",
     "s1heading": "Why do we process personal data?",

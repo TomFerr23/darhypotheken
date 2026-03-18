@@ -8,6 +8,7 @@ export default function Footer() {
   const t = useTranslations("footer");
   const locale = useLocale();
   const privacyHref = locale === "nl" ? "/privacy" : "/en/privacy";
+  const blogHref = locale === "nl" ? "/blog" : "/en/blog";
 
   return (
     <footer className="bg-dar-navy">
@@ -55,6 +56,11 @@ export default function Footer() {
               <li>
                 <a href="#contact" className="hover:text-dar-cream">
                   {t("contact")}
+                </a>
+              </li>
+              <li>
+                <a href={blogHref} className="hover:text-dar-cream">
+                  Blog
                 </a>
               </li>
             </ul>
