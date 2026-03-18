@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import JsonLd from "@/components/seo/JsonLd";
 import FaqJsonLd from "@/components/seo/FaqJsonLd";
 import Header from "@/components/layout/Header";
@@ -8,11 +9,15 @@ import LogoMarquee from "@/components/sections/LogoMarquee";
 import PillarsSection from "@/components/sections/PillarsSection";
 import LottieSection from "@/components/sections/LottieSection";
 import TaglineMarquee from "@/components/sections/TaglineMarquee";
-import TimelineSection from "@/components/sections/TimelineSection";
 import TeamSection from "@/components/sections/TeamSection";
 import BlogPreviewSection from "@/components/sections/BlogPreviewSection";
 import ClosingSection from "@/components/sections/ClosingSection";
 import ContactSection from "@/components/sections/ContactSection";
+
+const TimelineSection = dynamic(
+  () => import("@/components/sections/TimelineSection"),
+  { ssr: true }
+);
 
 export default async function Home({
   params,

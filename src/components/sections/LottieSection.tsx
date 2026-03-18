@@ -14,13 +14,21 @@ export default function LottieSection() {
         whileInView="visible"
         viewport={defaultViewport}
       >
-        <motion.div variants={fadeSlideUp} className="flex items-end justify-center">
+        <motion.div
+          variants={fadeSlideUp}
+          className="flex items-end justify-center"
+          style={{ minHeight: 250, minWidth: 250 }}
+        >
           <LottiePlayer
             src="/animations/animation-1.lottie"
             className="h-[250px] w-[250px] md:h-[400px] md:w-[400px]"
           />
         </motion.div>
-        <motion.div variants={fadeSlideUp} className="flex items-end justify-center">
+        <motion.div
+          variants={fadeSlideUp}
+          className="flex items-end justify-center"
+          style={{ minHeight: 250, minWidth: 250 }}
+        >
           <LottiePlayer
             src="/animations/animation-2.lottie"
             className="h-[250px] w-[250px] md:h-[400px] md:w-[400px]"
@@ -29,6 +37,7 @@ export default function LottieSection() {
         <motion.div
           variants={fadeSlideUp}
           className="hidden items-end justify-center md:flex"
+          style={{ minHeight: 400, minWidth: 400 }}
         >
           <LottiePlayer
             src="/animations/animation-1.lottie"
