@@ -17,6 +17,7 @@ export default function ChatPanel() {
     locale,
     toggleOpen,
     addMessage,
+    replaceTypingMessage,
     setLoading,
     setAvailable,
   } = useChat();
@@ -50,6 +51,7 @@ export default function ChatPanel() {
       setLoading(true);
 
       try {
+        const startTime = Date.now();
         const res = await fetch("/api/chat", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -64,16 +66,22 @@ export default function ChatPanel() {
 
         const data: ChatApiResponse = await res.json();
 
+        // Ensure typing indicator shows for at least 800ms for a natural feel
+        const elapsed = Date.now() - startTime;
+        if (elapsed < 800) {
+          await new Promise((r) => setTimeout(r, 800 - elapsed));
+        }
+
         if (!data.available) {
           setAvailable(false);
-          addMessage({
+          replaceTypingMessage({
             id: `assistant-${Date.now()}`,
             role: "assistant",
             content: t("comingSoon"),
             timestamp: Date.now(),
           });
         } else {
-          addMessage({
+          replaceTypingMessage({
             id: `assistant-${Date.now()}`,
             role: "assistant",
             content: data.message,
@@ -81,7 +89,7 @@ export default function ChatPanel() {
           });
         }
       } catch {
-        addMessage({
+        replaceTypingMessage({
           id: `error-${Date.now()}`,
           role: "assistant",
           content: t("errorGeneric"),
@@ -91,12 +99,10 @@ export default function ChatPanel() {
         setLoading(false);
       }
     },
-    [isAvailable, messages, locale, addMessage, setLoading, setAvailable, t]
+    [isAvailable, messages, locale, addMessage, replaceTypingMessage, setLoading, setAvailable, t]
   );
 
-  const displayMessages = messages.filter(
-    (m) => !(m.role === "assistant" && m.content === "" && !useChat)
-  );
+  const displayMessages = messages;
 
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-2xl md:rounded-2xl">

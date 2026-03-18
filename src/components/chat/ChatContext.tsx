@@ -20,6 +20,7 @@ interface ChatContextValue {
   toggleOpen: () => void;
   setLead: (lead: LeadInfo) => void;
   addMessage: (message: ChatMessage) => void;
+  replaceTypingMessage: (message: ChatMessage) => void;
   setLoading: (loading: boolean) => void;
   setAvailable: (available: boolean) => void;
 }
@@ -44,6 +45,18 @@ export function ChatProvider({ children }: { children: ReactNode }) {
     setMessages((prev) => [...prev, message]);
   }, []);
 
+  const replaceTypingMessage = useCallback((message: ChatMessage) => {
+    setMessages((prev) => {
+      const idx = prev.findIndex(
+        (m) => m.role === "assistant" && m.content === ""
+      );
+      if (idx === -1) return [...prev, message];
+      const next = [...prev];
+      next[idx] = message;
+      return next;
+    });
+  }, []);
+
   const setLoading = useCallback((loading: boolean) => {
     setIsLoading(loading);
   }, []);
@@ -64,6 +77,7 @@ export function ChatProvider({ children }: { children: ReactNode }) {
         toggleOpen,
         setLead,
         addMessage,
+        replaceTypingMessage,
         setLoading,
         setAvailable,
       }}
