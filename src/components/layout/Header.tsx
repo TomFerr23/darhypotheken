@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { NAV_ITEMS } from "@/lib/constants";
 import MobileMenu from "./MobileMenu";
@@ -41,12 +42,12 @@ export default function Header() {
 
           <div className="hidden items-center gap-4 nav:flex">
             <LanguageSwitcher className="text-dar-cream" />
-            <a
-              href="#contact"
+            <Link
+              href="/aanmelden"
               className="shrink-0 rounded-full bg-dar-green px-5 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
             >
               {t("anmelding")}
-            </a>
+            </Link>
           </div>
 
           <button

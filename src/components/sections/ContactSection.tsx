@@ -40,7 +40,7 @@ export default function ContactSection() {
         </motion.p>
 
         <motion.div className="mt-8" variants={fadeSlideUp}>
-          <Button href="#contact" variant="green">
+          <Button href="/aanmelden" variant="green">
             {t("cta")}
           </Button>
         </motion.div>

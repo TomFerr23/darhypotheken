@@ -4,9 +4,19 @@ import crypto from "crypto";
 interface LeadRequestBody {
   name: string;
   email: string;
-  phone: string;
+  phone?: string;
   locale?: string;
   source?: string;
+  surname?: string;
+  dateOfBirth?: string;
+  city?: string;
+  country?: string;
+  purchaseType?: string;
+  income?: string;
+  financingPercentage?: string;
+  currentMortgage?: string;
+  dataConsent?: boolean;
+  emailConsent?: boolean;
 }
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -14,7 +24,23 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export async function POST(request: NextRequest) {
   try {
     const body: LeadRequestBody = await request.json();
-    const { name, email, phone, locale = "nl", source = "chatbot" } = body;
+    const {
+      name,
+      email,
+      phone,
+      locale = "nl",
+      source = "chatbot",
+      surname,
+      dateOfBirth,
+      city,
+      country,
+      purchaseType,
+      income,
+      financingPercentage,
+      currentMortgage,
+      dataConsent,
+      emailConsent,
+    } = body;
 
     // Validate required fields
     if (!name || typeof name !== "string" || name.trim().length === 0) {
@@ -31,7 +57,11 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (!phone || typeof phone !== "string" || phone.trim().length === 0) {
+    // Phone is required for chatbot leads but optional for form submissions
+    if (
+      source !== "form" &&
+      (!phone || typeof phone !== "string" || phone.trim().length === 0)
+    ) {
       return NextResponse.json(
         { error: "Phone number is required." },
         { status: 400 }
@@ -54,6 +84,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Append to Google Sheets
+    // Row format: name, surname, email, phone, dateOfBirth, city, country,
+    //   purchaseType, income, financingPercentage, currentMortgage,
+    //   emailConsent, source, locale, timestamp
     try {
       const { google } = await import("googleapis");
 
@@ -67,10 +100,28 @@ export async function POST(request: NextRequest) {
 
       await sheets.spreadsheets.values.append({
         spreadsheetId,
-        range: "Sheet1!A:F",
+        range: "Sheet1!A:O",
         valueInputOption: "USER_ENTERED",
         requestBody: {
-          values: [[timestamp, name, email, phone, locale, source]],
+          values: [
+            [
+              name ?? "",
+              surname ?? "",
+              email ?? "",
+              phone ?? "",
+              dateOfBirth ?? "",
+              city ?? "",
+              country ?? "",
+              purchaseType ?? "",
+              income ?? "",
+              financingPercentage ?? "",
+              currentMortgage ?? "",
+              emailConsent !== undefined ? String(emailConsent) : "",
+              source,
+              locale,
+              timestamp,
+            ],
+          ],
         },
       });
     } catch (sheetsError) {

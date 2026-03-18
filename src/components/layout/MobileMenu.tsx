@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "motion/react";
+import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { NAV_ITEMS } from "@/lib/constants";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -50,16 +51,19 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
               ))}
             </nav>
 
-            <motion.a
-              href="#contact"
-              onClick={onClose}
-              className="mt-10 rounded-full bg-dar-green px-5 py-3 text-center text-lg font-semibold text-white transition-opacity hover:opacity-90"
+            <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 + NAV_ITEMS.length * 0.05 }}
             >
-              {t("anmelding")}
-            </motion.a>
+              <Link
+                href="/aanmelden"
+                onClick={onClose}
+                className="mt-10 block rounded-full bg-dar-green px-5 py-3 text-center text-lg font-semibold text-white transition-opacity hover:opacity-90"
+              >
+                {t("anmelding")}
+              </Link>
+            </motion.div>
 
             <motion.div
               className="mt-8"
