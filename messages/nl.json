@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "DAR Hypotheken — Duurzaam. Alternatief. Rentevrij.",
+    "description": "De eerste halalhypotheek in Nederland. DAR streeft ernaar de bestaande woningmarkt te verrijken met een alternatief, modern financieel product dat rentevrij is."
+  },
+  "nav": {
+    "purpose": "Purpose",
+    "process": "Process",
+    "team": "Team",
+    "contact": "Contact",
+    "anmelding": "Aanmelding",
+    "openMenu": "Menu openen",
+    "closeMenu": "Menu sluiten"
+  },
+  "hero": {
+    "heading1": "De eerste halalhypotheek",
+    "heading2": "in Nederland",
+    "subheading": "DAR \u2026 kan je mee thuiskomen!",
+    "tagline": "Duurzaam. Alternatief. Rentevrij."
+  },
+  "about": {
+    "heading": "Ontdek hoe we samen werken aan een toekomst waarin iedereen meedoet",
+    "description1": "DAR transformeert de financiële sector met het eerste inclusieve hypotheekplatform van Nederland.",
+    "description2": "Onze innovatieve oplossingen maken de toegang tot de koopwoningmarkt toegankelijker voor een breder publiek.",
+    "videoFallback": "Je browser ondersteunt geen video."
+  },
+  "pillars": {
+    "purposeHeading": "Purpose",
+    "purposeDescription": "DAR streeft ernaar de bestaande woningmarkt te verrijken met een alternatief, modern financieel product dat rentevrij is.",
+    "duurzaamHeading": "Duurzaam",
+    "inclusiviteitLabel": "Inclusiviteit",
+    "inclusiviteitText": "We maken woningbezit voor iedereen toegankelijk.",
+    "duurzaamLabel": "Duurzaam",
+    "duurzaamText": "Bijdragen aan een betere toekomst met duurzame financiële oplossingen.",
+    "alternatiefHeading": "Alternatief",
+    "medeEigendomLabel": "Mede-eigendom",
+    "medeEigendomText": "Met ons koop je de woning samen, en in termijnen koop je ons aandeel uit.",
+    "vasteBetalingenLabel": "Vaste Betalingen",
+    "vasteBetalingenText": "Geniet van financiële stabiliteit zonder onverwachte rentewijzigingen; je betaalt altijd hetzelfde bedrag.",
+    "rentevrijHeading": "Rentevrij",
+    "geenRenteLabel": "Geen Rente",
+    "geenRenteText": "In plaats van rente te betalen voor het lenen, betaal je een vergoeding voor het gebruik van de woning.",
+    "vermogensopbouwLabel": "Vermogensopbouw",
+    "vermogensopbouwText": "Vermogen opbouwen zonder traditionele rente."
+  },
+  "marquee": {
+    "tagline": "dar \u2013 duurzaam alternatief rentevrij"
+  },
+  "timeline": {
+    "heading": "Hypotheekproces",
+    "step1Title": "Vaste Maandelijkse Betalingsstructuur",
+    "step1Description": "De vaste maandelijkse betalingstermijn bestaat uit (i) aflossing en (ii) vergoeding.",
+    "step2Title": "Aflossingsplan van 30 Jaar",
+    "step2Description": "Het aflossingsschema (30 jaar) is gebaseerd op het aandeel van DAR in de aankoopprijs.",
+    "step3Title": "Marktgebaseerde Vergoeding",
+    "step3Description": "De prijs/vergoeding is gebaseerd op marktvoorwaarden.",
+    "step4Title": "Eindovername van Eigendom",
+    "step4Description": "Aan het einde van de looptijd neemt de consument het mede-eigendomsaandeel over."
+  },
+  "team": {
+    "heading": "Meet the Team",
+    "cfoTitle": "Chief Financial Officer (CFO) & Co-Founder",
+    "ceoTitle": "Chief Executive Officer (CEO) & Co-Founder",
+    "croTitle": "Chief Risk Officer (CRO) & Co-Founder",
+    "cioTitle": "Chief Investment Officer (CIO)",
+    "cooTitle": "Chief Operating Officer (COO)",
+    "cmoTitle": "Chief Marketing Officer (CMO) & Co-Founder"
+  },
+  "closing": {
+    "tagline": "DAR \u2026 kan je mee thuiskomen!"
+  },
+  "contact": {
+    "heading": "Contact",
+    "subtitle": "Klaar om meer te ontdekken?",
+    "description1": "Vul het formulier in en ontvang meer informatie",
+    "description2": "over de mogelijkheden van een DAR hypotheek.",
+    "cta": "Aanmelding"
+  },
+  "footer": {
+    "tagline": "Duurzaam. Alternatief. Rentevrij.",
+    "navigation": "Navigatie",
+    "aboutUs": "Over ons",
+    "howItWorks": "Hoe het werkt",
+    "team": "Team",
+    "contact": "Contact",
+    "contactHeading": "Contact",
+    "copyright": "© {year} DAR Hypotheken. Alle rechten voorbehouden."
+  }
+}

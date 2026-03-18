@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "DAR Hypotheken — Sustainable. Alternative. Interest-Free.",
+    "description": "The first halal mortgage in the Netherlands. DAR aims to enrich the existing housing market with an alternative, modern financial product that is interest-free."
+  },
+  "nav": {
+    "purpose": "Purpose",
+    "process": "Process",
+    "team": "Team",
+    "contact": "Contact",
+    "anmelding": "Registration",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "heading1": "The first halal mortgage",
+    "heading2": "in the Netherlands",
+    "subheading": "DAR \u2026 welcome home!",
+    "tagline": "Sustainable. Alternative. Interest-Free."
+  },
+  "about": {
+    "heading": "Discover how we work together towards a future where everyone belongs",
+    "description1": "DAR is transforming the financial sector with the first inclusive mortgage platform in the Netherlands.",
+    "description2": "Our innovative solutions make access to the housing market more accessible for a wider audience.",
+    "videoFallback": "Your browser does not support video."
+  },
+  "pillars": {
+    "purposeHeading": "Purpose",
+    "purposeDescription": "DAR aims to enrich the existing housing market with an alternative, modern financial product that is interest-free.",
+    "duurzaamHeading": "Sustainable",
+    "inclusiviteitLabel": "Inclusivity",
+    "inclusiviteitText": "We make homeownership accessible for everyone.",
+    "duurzaamLabel": "Sustainable",
+    "duurzaamText": "Contributing to a better future with sustainable financial solutions.",
+    "alternatiefHeading": "Alternative",
+    "medeEigendomLabel": "Co-ownership",
+    "medeEigendomText": "With us, you buy the property together, and in installments you buy out our share.",
+    "vasteBetalingenLabel": "Fixed Payments",
+    "vasteBetalingenText": "Enjoy financial stability without unexpected interest rate changes; you always pay the same amount.",
+    "rentevrijHeading": "Interest-Free",
+    "geenRenteLabel": "No Interest",
+    "geenRenteText": "Instead of paying interest for borrowing, you pay a fee for the use of the property.",
+    "vermogensopbouwLabel": "Wealth Building",
+    "vermogensopbouwText": "Build wealth without traditional interest."
+  },
+  "marquee": {
+    "tagline": "dar \u2013 sustainable alternative interest-free"
+  },
+  "timeline": {
+    "heading": "Mortgage Process",
+    "step1Title": "Fixed Monthly Payment Structure",
+    "step1Description": "The fixed monthly payment consists of (i) repayment and (ii) usage fee.",
+    "step2Title": "30-Year Repayment Plan",
+    "step2Description": "The repayment schedule (30 years) is based on DAR's share in the purchase price.",
+    "step3Title": "Market-Based Fee",
+    "step3Description": "The price/fee is based on market conditions.",
+    "step4Title": "Final Ownership Transfer",
+    "step4Description": "At the end of the term, the consumer takes over the co-ownership share."
+  },
+  "team": {
+    "heading": "Meet the Team",
+    "cfoTitle": "Chief Financial Officer (CFO) & Co-Founder",
+    "ceoTitle": "Chief Executive Officer (CEO) & Co-Founder",
+    "croTitle": "Chief Risk Officer (CRO) & Co-Founder",
+    "cioTitle": "Chief Investment Officer (CIO)",
+    "cooTitle": "Chief Operating Officer (COO)",
+    "cmoTitle": "Chief Marketing Officer (CMO) & Co-Founder"
+  },
+  "closing": {
+    "tagline": "DAR \u2026 welcome home!"
+  },
+  "contact": {
+    "heading": "Contact",
+    "subtitle": "Ready to discover more?",
+    "description1": "Fill in the form and receive more information",
+    "description2": "about the possibilities of a DAR mortgage.",
+    "cta": "Registration"
+  },
+  "footer": {
+    "tagline": "Sustainable. Alternative. Interest-Free.",
+    "navigation": "Navigation",
+    "aboutUs": "About Us",
+    "howItWorks": "How It Works",
+    "team": "Team",
+    "contact": "Contact",
+    "contactHeading": "Contact",
+    "copyright": "© {year} DAR Hypotheken. All rights reserved."
+  }
+}

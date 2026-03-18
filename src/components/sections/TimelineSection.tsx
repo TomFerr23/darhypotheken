@@ -2,11 +2,12 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
-import { TIMELINE_STEPS } from "@/lib/constants";
+import { useTranslations } from "next-intl";
 import { fadeSlideUp, defaultViewport } from "@/lib/animations";
 import TimelineItem from "@/components/ui/TimelineItem";
 
 export default function TimelineSection() {
+  const t = useTranslations("timeline");
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -14,6 +15,13 @@ export default function TimelineSection() {
   });
 
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
+  const steps = [
+    { title: t("step1Title"), description: t("step1Description") },
+    { title: t("step2Title"), description: t("step2Description") },
+    { title: t("step3Title"), description: t("step3Description") },
+    { title: t("step4Title"), description: t("step4Description") },
+  ];
 
   return (
     <section id="process" className="bg-white py-20 md:py-28">
@@ -25,17 +33,15 @@ export default function TimelineSection() {
           whileInView="visible"
           viewport={defaultViewport}
         >
-          Hypotheekproces
+          {t("heading")}
         </motion.h2>
 
         <div className="relative" ref={containerRef}>
-          {/* Background line (grey track) */}
           <div className="timeline-line-track" />
-          {/* Animated fill line */}
           <motion.div className="timeline-line-fill" style={{ height: lineHeight }} />
 
           <div className="flex flex-col gap-12">
-            {TIMELINE_STEPS.map((step, i) => (
+            {steps.map((step, i) => (
               <TimelineItem
                 key={step.title}
                 title={step.title}

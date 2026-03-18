@@ -7,9 +7,10 @@ import { fadeSlideUp } from "@/lib/animations";
 
 interface TeamCardProps {
   member: TeamMember;
+  title: string;
 }
 
-export default function TeamCard({ member }: TeamCardProps) {
+export default function TeamCard({ member, title }: TeamCardProps) {
   return (
     <motion.div
       className="flex flex-col items-center text-center"
@@ -26,7 +27,7 @@ export default function TeamCard({ member }: TeamCardProps) {
         />
       </div>
       <h3 className="text-xl font-semibold text-[#f8fddb]">{member.name}</h3>
-      <p className="mt-1 text-sm font-semibold text-white/70">{member.title}</p>
+      <p className="mt-1 text-sm font-semibold text-white/70">{title}</p>
       {member.email && (
         <a
           href={`mailto:${member.email}`}

@@ -8,7 +8,6 @@ import LottieSection from "@/components/sections/LottieSection";
 import TaglineMarquee from "@/components/sections/TaglineMarquee";
 import TimelineSection from "@/components/sections/TimelineSection";
 import TeamSection from "@/components/sections/TeamSection";
-
 import ClosingSection from "@/components/sections/ClosingSection";
 import ContactSection from "@/components/sections/ContactSection";
 
@@ -25,7 +24,6 @@ export default function Home() {
         <TaglineMarquee />
         <TimelineSection />
         <TeamSection />
-
         <ClosingSection />
         <ContactSection />
       </main>

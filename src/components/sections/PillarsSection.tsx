@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { PILLARS } from "@/lib/constants";
+import { useTranslations } from "next-intl";
 import {
   fadeSlideUp,
   staggerContainer,
@@ -10,9 +10,34 @@ import {
 import CheckmarkIcon from "@/components/ui/CheckmarkIcon";
 
 export default function PillarsSection() {
+  const t = useTranslations("pillars");
+
+  const pillars = [
+    {
+      heading: t("duurzaamHeading"),
+      items: [
+        { label: t("inclusiviteitLabel"), text: t("inclusiviteitText") },
+        { label: t("duurzaamLabel"), text: t("duurzaamText") },
+      ],
+    },
+    {
+      heading: t("alternatiefHeading"),
+      items: [
+        { label: t("medeEigendomLabel"), text: t("medeEigendomText") },
+        { label: t("vasteBetalingenLabel"), text: t("vasteBetalingenText") },
+      ],
+    },
+    {
+      heading: t("rentevrijHeading"),
+      items: [
+        { label: t("geenRenteLabel"), text: t("geenRenteText") },
+        { label: t("vermogensopbouwLabel"), text: t("vermogensopbouwText") },
+      ],
+    },
+  ];
+
   return (
     <>
-      {/* Purpose section — keeps navy background */}
       <section id="purpose" className="bg-dar-navy py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <motion.div
@@ -26,20 +51,18 @@ export default function PillarsSection() {
               className="text-4xl font-bold text-white md:text-5xl lg:text-6xl"
               variants={fadeSlideUp}
             >
-              Purpose
+              {t("purposeHeading")}
             </motion.h2>
             <motion.p
               className="mt-6 text-lg leading-relaxed text-white/70 md:text-xl"
               variants={fadeSlideUp}
             >
-              DAR streeft ernaar de bestaande woningmarkt te verrijken met een
-              alternatief, modern financieel product dat rentevrij is.
+              {t("purposeDescription")}
             </motion.p>
           </motion.div>
         </div>
       </section>
 
-      {/* Three pillars — light blue background */}
       <section className="bg-[#f4f9ff] py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <motion.div
@@ -49,7 +72,7 @@ export default function PillarsSection() {
             whileInView="visible"
             viewport={defaultViewport}
           >
-            {PILLARS.map((pillar, index) => (
+            {pillars.map((pillar, index) => (
               <motion.div
                 key={pillar.heading}
                 className={`px-0 md:px-8 ${index > 0 ? "md:border-l md:border-[#d0dde8]" : ""}`}

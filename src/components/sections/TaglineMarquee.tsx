@@ -1,8 +1,10 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Marquee from "@/components/ui/Marquee";
 
 export default function TaglineMarquee() {
+  const t = useTranslations("marquee");
   const items = Array.from({ length: 6 });
 
   return (
@@ -13,7 +15,7 @@ export default function TaglineMarquee() {
             key={i}
             className="mx-8 whitespace-nowrap text-xl font-semibold uppercase tracking-widest text-dar-cream md:text-2xl"
           >
-            dar &ndash; duurzaam alternatief rentevrij
+            {t("tagline")}
           </span>
         ))}
       </Marquee>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 import { TEAM_MEMBERS } from "@/lib/constants";
 import {
   fadeSlideUp,
@@ -10,6 +11,8 @@ import {
 import TeamCard from "@/components/ui/TeamCard";
 
 export default function TeamSection() {
+  const t = useTranslations("team");
+
   return (
     <section id="team" className="bg-[#1c5490] py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
@@ -20,7 +23,7 @@ export default function TeamSection() {
           whileInView="visible"
           viewport={defaultViewport}
         >
-          Meet the Team
+          {t("heading")}
         </motion.h2>
 
         <motion.div
@@ -31,7 +34,7 @@ export default function TeamSection() {
           viewport={defaultViewport}
         >
           {TEAM_MEMBERS.map((member) => (
-            <TeamCard key={member.name} member={member} />
+            <TeamCard key={member.name} member={member} title={t(member.titleKey)} />
           ))}
         </motion.div>
       </div>

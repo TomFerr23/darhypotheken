@@ -1,7 +1,9 @@
 "use client";
 
 import { motion, AnimatePresence } from "motion/react";
+import { useTranslations } from "next-intl";
 import { NAV_ITEMS } from "@/lib/constants";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 interface MobileMenuProps {
   open: boolean;
@@ -9,6 +11,8 @@ interface MobileMenuProps {
 }
 
 export default function MobileMenu({ open, onClose }: MobileMenuProps) {
+  const t = useTranslations("nav");
+
   return (
     <AnimatePresence>
       {open && (
@@ -20,18 +24,16 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
           transition={{ type: "tween", duration: 0.3 }}
         >
           <div className="flex h-full flex-col px-6 py-4">
-            {/* Close button */}
             <div className="flex justify-end">
               <button
                 onClick={onClose}
                 className="text-3xl text-dar-cream"
-                aria-label="Menu sluiten"
+                aria-label={t("closeMenu")}
               >
                 &times;
               </button>
             </div>
 
-            {/* Nav links */}
             <nav className="mt-16 flex flex-col gap-8">
               {NAV_ITEMS.map((item, i) => (
                 <motion.a
@@ -43,10 +45,30 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.1 + i * 0.05 }}
                 >
-                  {item.label}
+                  {t(item.key)}
                 </motion.a>
               ))}
             </nav>
+
+            <motion.a
+              href="#contact"
+              onClick={onClose}
+              className="mt-10 rounded-full bg-dar-green px-5 py-3 text-center text-lg font-semibold text-white transition-opacity hover:opacity-90"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.1 + NAV_ITEMS.length * 0.05 }}
+            >
+              {t("anmelding")}
+            </motion.a>
+
+            <motion.div
+              className="mt-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
+              <LanguageSwitcher className="text-dar-cream text-lg" />
+            </motion.div>
           </div>
         </motion.div>
       )}
