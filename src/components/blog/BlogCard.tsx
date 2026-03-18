@@ -29,7 +29,7 @@ export default function BlogCard({
         {mainImage?.asset && (
           <div className="relative h-48 w-full overflow-hidden">
             <Image
-              src={urlFor(mainImage).width(600).height(340).url()}
+              src={urlFor(mainImage).width(600).height(340).fit("crop").url()}
               alt={mainImage.alt || title}
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-105"

@@ -103,7 +103,7 @@ export default async function BlogPostPage({
           {post.mainImage?.asset && (
             <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-2xl">
               <Image
-                src={urlFor(post.mainImage).width(1200).height(675).url()}
+                src={urlFor(post.mainImage).width(1200).height(675).fit("crop").url()}
                 alt={post.mainImage.alt || title}
                 fill
                 className="object-cover"
