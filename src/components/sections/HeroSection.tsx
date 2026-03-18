@@ -30,7 +30,7 @@ export default function HeroSection() {
         animate="visible"
       >
         <motion.h1
-          className="text-4xl font-bold leading-tight text-dar-cream md:text-6xl lg:text-[72px] lg:leading-[1.1]"
+          className="text-[42px] font-bold leading-tight text-dar-cream md:text-6xl lg:text-[72px] lg:leading-[1.1]"
           variants={heroEntrance}
         >
           {t("heading1")}
