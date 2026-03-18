@@ -1,11 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Footer() {
   const t = useTranslations("footer");
+  const locale = useLocale();
+  const privacyHref = locale === "nl" ? "/privacy" : "/en/privacy";
 
   return (
     <footer className="bg-dar-navy">
@@ -19,6 +21,10 @@ export default function Footer() {
               height={32}
             />
             <p className="mt-4 text-sm text-dar-cream/70">{t("tagline")}</p>
+            <p className="mt-2 text-sm leading-snug text-dar-cream/50">
+              Oostenburgermiddenstraat 119<br />
+              1018 LH, Amsterdam (NL)
+            </p>
           </div>
 
           <div>
@@ -44,6 +50,11 @@ export default function Footer() {
               <li>
                 <a href="#contact" className="hover:text-dar-cream">
                   {t("contact")}
+                </a>
+              </li>
+              <li>
+                <a href={privacyHref} className="hover:text-dar-cream">
+                  {t("privacy")}
                 </a>
               </li>
             </ul>
