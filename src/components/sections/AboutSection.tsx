@@ -36,7 +36,7 @@ export default function AboutSection() {
       >
         {/* Heading */}
         <motion.h2
-          className="mx-auto max-w-4xl text-center text-3xl font-semibold leading-tight text-[#f8fddb] md:text-5xl lg:text-[48px] lg:leading-[70px]"
+          className="mx-auto max-w-4xl text-center text-3xl font-semibold leading-tight text-[#f8fddb] md:text-5xl lg:text-[48px] lg:leading-[58px]"
           variants={fadeSlideUp}
         >
           Ontdek hoe we samen werken aan een toekomst waarin iedereen meedoet

@@ -9,7 +9,7 @@ export default function ClosingSection() {
     <section className="relative overflow-hidden bg-white pb-0 pt-16 md:pt-24">
       {/* Animated clouds — same marquee style as hero */}
       <div
-        className="pointer-events-none absolute top-[8%] z-0 w-[220px] opacity-60 md:w-[350px]"
+        className="pointer-events-none absolute top-[8%] z-0 w-[80px] opacity-60 md:w-[120px]"
         style={{ animation: "cloud-move-right 22s linear infinite" }}
       >
         <Image
@@ -22,7 +22,7 @@ export default function ClosingSection() {
         />
       </div>
       <div
-        className="pointer-events-none absolute top-[18%] z-0 w-[280px] opacity-40 md:w-[450px]"
+        className="pointer-events-none absolute top-[18%] z-0 w-[100px] opacity-40 md:w-[160px]"
         style={{ animation: "cloud-move-left 32s linear infinite" }}
       >
         <Image
@@ -42,7 +42,7 @@ export default function ClosingSection() {
         whileInView="visible"
         viewport={defaultViewport}
       >
-        <p className="text-2xl font-bold text-dar-slate md:text-4xl lg:text-5xl">
+        <p className="text-2xl font-semibold text-dar-slate md:text-4xl lg:text-5xl">
           DAR &hellip; kan je mee thuiskomen!
         </p>
       </motion.div>

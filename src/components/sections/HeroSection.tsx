@@ -61,7 +61,7 @@ export default function HeroSection() {
         </motion.p>
 
         <motion.p
-          className="mt-8 text-lg tracking-widest text-dar-cream/80 md:text-xl"
+          className="mt-8 text-sm tracking-widest text-dar-cream/80 md:text-xl"
           variants={heroEntrance}
         >
           Duurzaam. Alternatief. Rentevrij.
