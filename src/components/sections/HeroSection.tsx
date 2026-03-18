@@ -6,11 +6,11 @@ import { heroEntrance, staggerContainer, easeOutBack } from "@/lib/animations";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[85vh] overflow-hidden bg-dar-navy">
-      {/* Cloud moving left → right (top area) */}
+    <section className="relative min-h-[60vh] overflow-hidden bg-dar-navy md:min-h-[85vh]">
+      {/* Cloud moving left → right (top area) - white */}
       <div
-        className="pointer-events-none absolute top-[10%] z-0 w-[140px] opacity-70 md:w-[200px]"
-        style={{ animation: "cloud-move-right 18s linear infinite" }}
+        className="pointer-events-none absolute top-[12%] z-0 w-[60px] opacity-90 md:w-[100px]"
+        style={{ animation: "cloud-move-right 22s linear infinite" }}
       >
         <Image
           src="/images/cloud.svg"
@@ -22,9 +22,9 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* Cloud moving right → left (slightly lower & a bit larger) */}
+      {/* Cloud moving right → left (slightly lower) - grey/subtle */}
       <div
-        className="pointer-events-none absolute top-[25%] z-0 w-[180px] opacity-50 md:w-[260px]"
+        className="pointer-events-none absolute top-[22%] z-0 w-[80px] opacity-50 md:w-[120px]"
         style={{ animation: "cloud-move-left 30s linear infinite" }}
       >
         <Image
@@ -39,7 +39,7 @@ export default function HeroSection() {
 
       {/* Content */}
       <motion.div
-        className="relative z-10 mx-auto flex max-w-5xl flex-col items-center justify-center px-6 py-32 text-center md:py-40"
+        className="relative z-10 mx-auto flex max-w-5xl flex-col items-center justify-center px-6 py-20 text-center md:py-40"
         variants={staggerContainer(0.2)}
         initial="hidden"
         animate="visible"
