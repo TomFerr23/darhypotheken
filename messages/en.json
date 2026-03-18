@@ -81,7 +81,8 @@
     "title": "Blog",
     "description": "Read the latest insights on mortgages, sustainability and the housing market.",
     "noPosts": "No articles published yet.",
-    "backToList": "Back to blog"
+    "backToList": "Back to blog",
+    "viewAll": "View all articles"
   },
   "privacy": {
     "title": "Privacy Statement",

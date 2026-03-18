@@ -8,10 +8,17 @@ import LottieSection from "@/components/sections/LottieSection";
 import TaglineMarquee from "@/components/sections/TaglineMarquee";
 import TimelineSection from "@/components/sections/TimelineSection";
 import TeamSection from "@/components/sections/TeamSection";
+import BlogPreviewSection from "@/components/sections/BlogPreviewSection";
 import ClosingSection from "@/components/sections/ClosingSection";
 import ContactSection from "@/components/sections/ContactSection";
 
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
   return (
     <>
       <Header />
@@ -24,6 +31,7 @@ export default function Home() {
         <TaglineMarquee />
         <TimelineSection />
         <TeamSection />
+        <BlogPreviewSection locale={locale} />
         <ClosingSection />
         <ContactSection />
       </main>

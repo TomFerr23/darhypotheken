@@ -81,7 +81,8 @@
     "title": "Blog",
     "description": "Lees de laatste inzichten over hypotheken, duurzaamheid en de woningmarkt.",
     "noPosts": "Nog geen artikelen gepubliceerd.",
-    "backToList": "Terug naar blog"
+    "backToList": "Terug naar blog",
+    "viewAll": "Bekijk alle artikelen"
   },
   "privacy": {
     "title": "Privacy Statement",
