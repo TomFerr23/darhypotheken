@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { NAV_ITEMS } from "@/lib/constants";
 import MobileMenu from "./MobileMenu";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -10,12 +10,14 @@ import LanguageSwitcher from "./LanguageSwitcher";
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const t = useTranslations("nav");
+  const locale = useLocale();
+  const homeHref = locale === "nl" ? "/" : "/en";
 
   return (
     <>
       <header className="sticky top-0 z-50 bg-dar-navy">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <a href="#" className="shrink-0">
+          <a href={homeHref} className="shrink-0">
             <Image
               src="/images/dar-logo.svg"
               alt="DAR Hypotheken"
