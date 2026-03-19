@@ -31,26 +31,17 @@ export default function HeroSection() {
       />
 
       <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center justify-center px-6 py-20 text-center md:py-40">
-        <h1
-          className="hero-animate text-[42px] font-bold leading-tight text-dar-cream md:text-6xl lg:text-[72px] lg:leading-[1.1]"
-          style={{ animationDelay: "0s" }}
-        >
+        <h1 className="text-[42px] font-bold leading-tight text-dar-cream md:text-6xl lg:text-[72px] lg:leading-[1.1]">
           {t("heading1")}
           <br />
           {t("heading2")}
         </h1>
 
-        <p
-          className="hero-animate mt-6 text-xl font-semibold text-white md:text-3xl lg:text-[40px]"
-          style={{ animationDelay: "0.2s" }}
-        >
+        <p className="mt-6 text-xl font-semibold text-white md:text-3xl lg:text-[40px]">
           {t("subheading")}
         </p>
 
-        <p
-          className="hero-animate mt-8 text-sm tracking-widest text-dar-cream/80 md:text-xl"
-          style={{ animationDelay: "0.4s" }}
-        >
+        <p className="mt-8 text-sm tracking-widest text-dar-cream/80 md:text-xl">
           {t("tagline")}
         </p>
       </div>

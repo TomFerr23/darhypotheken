@@ -94,18 +94,7 @@ body {
   }
 }
 
-/* Hero entrance animations — CSS-only to avoid JS bundle for LCP */
-@keyframes hero-fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Hero artwork slide-in animations — text has NO animation to preserve LCP */
 @keyframes hero-slide-from-left {
   from {
     transform: translateX(-100%);
@@ -122,11 +111,6 @@ body {
   to {
     transform: translateX(0);
   }
-}
-
-.hero-animate {
-  opacity: 0;
-  animation: hero-fade-up 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 .hero-slide-left {
@@ -149,10 +133,6 @@ body {
   }
   .timeline-line-fill {
     transition: none !important;
-  }
-  .hero-animate {
-    opacity: 1;
-    animation: none !important;
   }
   .hero-slide-left,
   .hero-slide-right {
