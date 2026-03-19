@@ -17,27 +17,24 @@ export default function LottieSection() {
         <motion.div
           variants={fadeSlideUp}
           className="flex items-end justify-center"
-          style={{ minHeight: 250, minWidth: 250 }}
         >
           <LottiePlayer
             src="/animations/animation-1.lottie"
-            className="h-[250px] w-[250px] md:h-[400px] md:w-[400px]"
+            className="h-auto w-full max-w-[250px] md:max-w-[400px] aspect-square"
           />
         </motion.div>
         <motion.div
           variants={fadeSlideUp}
           className="flex items-end justify-center"
-          style={{ minHeight: 250, minWidth: 250 }}
         >
           <LottiePlayer
             src="/animations/animation-2.lottie"
-            className="h-[250px] w-[250px] md:h-[400px] md:w-[400px]"
+            className="h-auto w-full max-w-[250px] md:max-w-[400px] aspect-square"
           />
         </motion.div>
         <motion.div
           variants={fadeSlideUp}
           className="hidden items-end justify-center md:flex"
-          style={{ minHeight: 400, minWidth: 400 }}
         >
           <LottiePlayer
             src="/animations/animation-1.lottie"

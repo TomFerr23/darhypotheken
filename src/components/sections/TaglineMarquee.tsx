@@ -1,5 +1,3 @@
-"use client";
-
 import { useTranslations } from "next-intl";
 import Marquee from "@/components/ui/Marquee";
 

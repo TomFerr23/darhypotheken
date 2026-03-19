@@ -25,7 +25,7 @@ export default function TimelineSection() {
   ];
 
   return (
-    <section id="process" className="bg-white py-20 md:py-28">
+    <section id="process" className="overflow-hidden bg-white py-20 md:py-28">
       <div className="mx-auto max-w-5xl px-6">
         <motion.h2
           className="mb-16 text-center text-3xl font-semibold text-dar-slate md:text-5xl"

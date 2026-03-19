@@ -1,5 +1,3 @@
-"use client";
-
 interface MarqueeProps {
   children: React.ReactNode;
   speed?: number;

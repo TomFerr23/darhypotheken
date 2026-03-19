@@ -15,12 +15,14 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   font-family: var(--font-gilroy), sans-serif;
   color: var(--color-dar-slate);
   background: #ffffff;
+  overflow-x: hidden;
 }
 
 /* Scroll margin for sticky header offset */
@@ -28,19 +30,19 @@ body {
   scroll-margin-top: 80px;
 }
 
-/* Cloud marquee animations */
+/* Cloud marquee animations — use calc to stay within viewport bounds */
 @keyframes cloud-move-right {
   0% {
     transform: translateX(-100%);
   }
   100% {
-    transform: translateX(100vw);
+    transform: translateX(calc(100vw - 100%));
   }
 }
 
 @keyframes cloud-move-left {
   0% {
-    transform: translateX(100vw);
+    transform: translateX(calc(100vw - 100%));
   }
   100% {
     transform: translateX(-100%);
@@ -92,6 +94,51 @@ body {
   }
 }
 
+/* Hero entrance animations — CSS-only to avoid JS bundle for LCP */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-slide-from-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes hero-slide-from-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.hero-animate {
+  opacity: 0;
+  animation: hero-fade-up 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.hero-slide-left {
+  transform: translateX(-100%);
+  animation: hero-slide-from-left 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s forwards;
+}
+
+.hero-slide-right {
+  transform: translateX(100%);
+  animation: hero-slide-from-right 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s forwards;
+}
+
 /* Respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -103,9 +150,14 @@ body {
   .timeline-line-fill {
     transition: none !important;
   }
+  .hero-animate {
+    opacity: 1;
+    animation: none !important;
+  }
+  .hero-slide-left,
+  .hero-slide-right {
+    transform: none;
+    animation: none !important;
+  }
 }
 
-/* Add will-change to cloud animations for GPU acceleration */
-[style*="cloud-move"] {
-  will-change: transform;
-}
